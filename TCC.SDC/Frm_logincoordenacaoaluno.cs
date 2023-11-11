@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,39 +20,66 @@ namespace TCC.SDC
 
         private void btn_ligincoordenacaoaluno_Click(object sender, EventArgs e)
         {//verifica se a senha e o nome da coordenação estão registrados e da a liberação
-            //para ir cadastrar o aluno
+         //para ir cadastrar o aluno
+            string nomecoordenadoraluno = txt_coordenacaonomealuno.Text;
+            string senhacoordenadoraluno = txt_coordenacaosenhaaluno.Text;
+
+
+
+            // Configurar a string de conexão
+            string connectionString = "server=localhost;user id=root;database=senai;password=123";
+
+
+
+            // Criar uma instância de MySqlConnection
+            MySqlConnection conexao = new MySqlConnection(connectionString);
+
             try
             {
-                if (txt_coordenacaonomealuno.Text.Equals("Micael") && txt_coordenacaosenhaaluno.Text.Equals("123"))
+                conexao.Open();
+
+                // Consulta SQL para verificar as credenciais
+                string consulta = "SELECT * FROM coordenacao WHERE Nome = @nome AND Senha = @senha";
+                MySqlCommand comando = new MySqlCommand(consulta, conexao);
+                comando.Parameters.AddWithValue("@nome", nomecoordenadoraluno);
+                comando.Parameters.AddWithValue("@senha", senhacoordenadoraluno);
+
+                int resultado = Convert.ToInt32(comando.ExecuteScalar());
+                this.Close();
+
+                if (resultado > 0)
                 {
+
+                    MessageBox.Show("Login bem-sucedido!");
+                    // Faça o que for necessário após o login bem-sucedido
                     Frm_cadastroaluno T = new Frm_cadastroaluno();
                     T.Show();
+
                 }
-                else 
+
+
+                else
                 {
-                    MessageBox.Show("Usuario ou senha incorretos",
-                        "Desculpe",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+
+
+
+                    MessageBox.Show("Nome ou senha inválidas. Tente novamente.");
+                    // Limpe os campos de entrada ou tome outras ações apropriadas
                     txt_coordenacaonomealuno.Focus();
-                    txt_coordenacaosenhaaluno.Text = "";
                     txt_coordenacaonomealuno.Text = "";
+                    txt_coordenacaosenhaaluno.Text = "";
                 }
-
-                
             }
-            catch (Exception )
+
+            catch (Exception ex)
             {
-                MessageBox.Show("Usuario ou senha incorretos",
-                                        "Desculpe",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Error);
-                txt_coordenacaonomealuno.Focus();
-                txt_coordenacaosenhaaluno.Text = "";
-                txt_coordenacaonomealuno.Text = "";
-
+                MessageBox.Show("Erro ao conectar ao banco de dados: " + ex.Message);
             }
-            
+            finally
+            {
+                conexao.Close();
+            }
+
         }
 
         

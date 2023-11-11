@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_logincoordenacaoaluno));
             this.txt_coordenacaonomealuno = new System.Windows.Forms.TextBox();
             this.txt_coordenacaosenhaaluno = new System.Windows.Forms.TextBox();
             this.lbl_nomecoordenacaoaluno = new System.Windows.Forms.Label();
@@ -55,6 +56,7 @@
             // lbl_nomecoordenacaoaluno
             // 
             this.lbl_nomecoordenacaoaluno.AutoSize = true;
+            this.lbl_nomecoordenacaoaluno.ForeColor = System.Drawing.Color.White;
             this.lbl_nomecoordenacaoaluno.Location = new System.Drawing.Point(14, 36);
             this.lbl_nomecoordenacaoaluno.Name = "lbl_nomecoordenacaoaluno";
             this.lbl_nomecoordenacaoaluno.Size = new System.Drawing.Size(35, 13);
@@ -64,30 +66,37 @@
             // lbl_coordenacaosenhaaluno
             // 
             this.lbl_coordenacaosenhaaluno.AutoSize = true;
+            this.lbl_coordenacaosenhaaluno.ForeColor = System.Drawing.Color.White;
             this.lbl_coordenacaosenhaaluno.Location = new System.Drawing.Point(14, 114);
             this.lbl_coordenacaosenhaaluno.Name = "lbl_coordenacaosenhaaluno";
             this.lbl_coordenacaosenhaaluno.Size = new System.Drawing.Size(38, 13);
             this.lbl_coordenacaosenhaaluno.TabIndex = 3;
             this.lbl_coordenacaosenhaaluno.Text = "Senha";
-            
             // 
             // btn_ligincoordenacaoaluno
             // 
-            this.btn_ligincoordenacaoaluno.Location = new System.Drawing.Point(116, 182);
+            this.btn_ligincoordenacaoaluno.BackColor = System.Drawing.Color.Blue;
+            this.btn_ligincoordenacaoaluno.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btn_ligincoordenacaoaluno.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btn_ligincoordenacaoaluno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btn_ligincoordenacaoaluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ligincoordenacaoaluno.Location = new System.Drawing.Point(142, 156);
             this.btn_ligincoordenacaoaluno.Name = "btn_ligincoordenacaoaluno";
-            this.btn_ligincoordenacaoaluno.Size = new System.Drawing.Size(75, 23);
-            this.btn_ligincoordenacaoaluno.TabIndex = 4;
+            this.btn_ligincoordenacaoaluno.Size = new System.Drawing.Size(75, 37);
+            this.btn_ligincoordenacaoaluno.TabIndex = 2;
             this.btn_ligincoordenacaoaluno.Text = "Login";
-            this.btn_ligincoordenacaoaluno.UseVisualStyleBackColor = true;
+            this.btn_ligincoordenacaoaluno.UseVisualStyleBackColor = false;
             this.btn_ligincoordenacaoaluno.Click += new System.EventHandler(this.btn_ligincoordenacaoaluno_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.Controls.Add(this.lbl_nomecoordenacaoaluno);
             this.groupBox1.Controls.Add(this.btn_ligincoordenacaoaluno);
             this.groupBox1.Controls.Add(this.txt_coordenacaonomealuno);
             this.groupBox1.Controls.Add(this.txt_coordenacaosenhaaluno);
             this.groupBox1.Controls.Add(this.lbl_coordenacaosenhaaluno);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(306, 225);
@@ -99,8 +108,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(329, 259);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Frm_logincoordenacaoaluno";

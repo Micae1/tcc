@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace TCC.SDC
 {
@@ -40,8 +41,33 @@ namespace TCC.SDC
 
         private void listaDePresençaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_listapresencaprofessor T = new Frm_listapresencaprofessor();
+            Frm_loginprofessor T = new Frm_loginprofessor();
+            T.Show();
+        }
+
+        private void listaDePresençaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Frm_consutarlistapresencaaluno T = new Frm_consutarlistapresencaaluno();
+            T.Show();
+        }
+
+        private void criarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+            Frm_logincoordenacaocriarturma T = new Frm_logincoordenacaocriarturma();
+            T.Show();
+
+
+
+
+        }
+
+        private void listaDePresençaToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Frm_logincoordenaçãolistadepresenca T = new Frm_logincoordenaçãolistadepresenca();
             T.Show();
         }
     }
 }
+

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_logincoordenacaoprofessor));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_coordenacaosenhaprofessor = new System.Windows.Forms.TextBox();
             this.txt_coordenacaonomeprofessor = new System.Windows.Forms.TextBox();
@@ -39,11 +40,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.Controls.Add(this.txt_coordenacaosenhaprofessor);
             this.groupBox1.Controls.Add(this.txt_coordenacaonomeprofessor);
             this.groupBox1.Controls.Add(this.lbl_coordenacaosenhaprofessor);
             this.groupBox1.Controls.Add(this.lbl_coordenacaonomeprofessor);
             this.groupBox1.Controls.Add(this.btn_coordenacaologinprofessor);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(368, 220);
@@ -58,14 +61,14 @@
             this.txt_coordenacaosenhaprofessor.Name = "txt_coordenacaosenhaprofessor";
             this.txt_coordenacaosenhaprofessor.PasswordChar = '#';
             this.txt_coordenacaosenhaprofessor.Size = new System.Drawing.Size(230, 20);
-            this.txt_coordenacaosenhaprofessor.TabIndex = 4;
+            this.txt_coordenacaosenhaprofessor.TabIndex = 1;
             // 
             // txt_coordenacaonomeprofessor
             // 
             this.txt_coordenacaonomeprofessor.Location = new System.Drawing.Point(92, 35);
             this.txt_coordenacaonomeprofessor.Name = "txt_coordenacaonomeprofessor";
             this.txt_coordenacaonomeprofessor.Size = new System.Drawing.Size(230, 20);
-            this.txt_coordenacaonomeprofessor.TabIndex = 3;
+            this.txt_coordenacaonomeprofessor.TabIndex = 0;
             // 
             // lbl_coordenacaosenhaprofessor
             // 
@@ -87,27 +90,33 @@
             // 
             // btn_coordenacaologinprofessor
             // 
-            this.btn_coordenacaologinprofessor.Location = new System.Drawing.Point(165, 186);
+            this.btn_coordenacaologinprofessor.BackColor = System.Drawing.Color.Blue;
+            this.btn_coordenacaologinprofessor.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btn_coordenacaologinprofessor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.btn_coordenacaologinprofessor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btn_coordenacaologinprofessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_coordenacaologinprofessor.Location = new System.Drawing.Point(167, 158);
             this.btn_coordenacaologinprofessor.Name = "btn_coordenacaologinprofessor";
-            this.btn_coordenacaologinprofessor.Size = new System.Drawing.Size(75, 20);
-            this.btn_coordenacaologinprofessor.TabIndex = 0;
+            this.btn_coordenacaologinprofessor.Size = new System.Drawing.Size(75, 39);
+            this.btn_coordenacaologinprofessor.TabIndex = 2;
             this.btn_coordenacaologinprofessor.Text = "Login";
-            this.btn_coordenacaologinprofessor.UseVisualStyleBackColor = true;
+            this.btn_coordenacaologinprofessor.UseVisualStyleBackColor = false;
             this.btn_coordenacaologinprofessor.Click += new System.EventHandler(this.btn_coordenacaologinprofessor_Click);
             // 
             // Frm_logincoordenacaoprofessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(396, 247);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Frm_logincoordenacaoprofessor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
